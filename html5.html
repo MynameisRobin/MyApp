@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>html5响应式</title>
+	<link rel="stylesheet" href="css/html5.css">
+</head>
+<body>
+	<!-- 头部 -->
+	<header class="clear">
+		<input type="text" id="search" placeholder="搜索">
+		<input type="button" id="searchBtn" value="搜索">
+	</header>
+	<!-- 导航 -->
+	<nav class="clear">
+		<div class="message"><a href="javascript:;">在线留言</a></div>|
+		<div class="about"><a href="javascript:;">关于我们</a></div>
+	</nav>
+	<!-- banner滚动区域 -->
+    <div id="slideBox" class="slideBox">
+		<div class="bd">
+			<ul>
+				<li>
+					<a class="pic" href="#"><img src="images/1.jpg" /></a>
+				</li>
+				<li>
+					<a class="pic" href="#"><img src="images/2.png"/></a>
+				</li>
+				<li>
+					<a class="pic" href="#"><img src="images/3.jpg"/></a>
+				</li>
+				<li>
+					<a class="pic" href="#"><img src="images/4.jpg"/></a>
+				</li>
+				<li>
+					<a class="pic" href="#"><img src="images/5.png"/></a>
+				</li>
+			</ul>
+		</div>
+		<!-- 轮播圆点 -->
+		<div class="hd">
+			<ul></ul>
+		</div>
+	</div>
+	<!-- 主体内容区域 -->
+	<section class="main clear">
+		<ul>
+			<li class="yifu">产品1</li>
+			<li class="xiezi">产品2</li>
+			<li class="beibao">产品3</li>
+			<li class="maozi">产品4</li>
+		</ul>
+	</section>
+	<!-- 底部导航 -->
+	<footer>
+		<ul class="f_nav" id="f_nav">
+			<li class="act">首页</li>
+			<li>列表</li>
+			<li>登录</li>
+			<li>返回</li>
+		</ul>
+	</footer>
+</body>
+</html>
+<script src="js/TouchSlide.1.1.js"></script>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script src='http://lib.sinaapp.com/js/jquery-ui/1.9.2/jquery-ui.min.js'></script>
+<!-- 轮播插件 -->
+<script type="text/javascript">
+	TouchSlide({ 
+		slideCell:"#slideBox",
+		titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+		mainCell:".bd ul", 
+		effect:"leftLoop", 
+		autoPage:true,//自动分页
+		autoPlay:true //自动播放
+	});
+</script>
+<script>
+	$(function(){
+		$("#f_nav li").click(function(){
+			$(this).addClass("act").siblings().removeClass("act");
+		});
+	});
+</script>
